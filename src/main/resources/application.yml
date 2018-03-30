@@ -1,0 +1,16 @@
+server:
+  port: 38889
+
+management:
+  endpoint:
+    health:
+      show-details: when-authorized
+
+sensoric:
+  security:
+    user:
+      name: sensor-user
+      roles: USER
+    manager:
+      name: sensor-manager
+      roles: ACTUATOR

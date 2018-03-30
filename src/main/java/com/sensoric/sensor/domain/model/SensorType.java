@@ -9,14 +9,14 @@ import java.util.UUID;
 @Entity
 @Table(name = "sensor_types")
 public class SensorType {
-    @Id
-    private UUID id;
+	@Id
+	private UUID id;
 
-    @Enumerated(EnumType.STRING)
-    private Name name;
+	@Enumerated(EnumType.STRING)
+	private Name name;
 
-    public enum Name {
-        TEMPERATURE,
-        HUMIDITY
-    }
+	public enum Name {
+		TEMPERATURE,
+		HUMIDITY
+	}
 }

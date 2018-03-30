@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.util.UUID;
 
@@ -11,12 +12,14 @@ import java.util.UUID;
 @Entity
 @Table(name = "sensors")
 public class Sensor {
-    @Id
-    private UUID id;
+	@Id
+	private UUID id;
 
-    private String name;
+	private String name;
 
-    private Location location;
+	@ManyToOne(optional = false)
+	private Location location;
 
-    private SensorType type;
+	@ManyToOne(optional = false)
+	private SensorType type;
 }
