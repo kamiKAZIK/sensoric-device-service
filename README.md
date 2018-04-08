@@ -1,6 +1,5 @@
-# sensoric-readings-persistence-service
+# sensoric-sensor-service
 
-echo "configuration-user-password" | docker secret configuraion-user-password -
 docker run --name sensoric-sensor-service -p38889:38889 \
     -it -d com.sensoric/sensoric-sensor-service \
     --spring.profiles.active=production \

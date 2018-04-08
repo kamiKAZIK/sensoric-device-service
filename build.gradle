@@ -48,6 +48,6 @@ springBoot {
 
 docker {
     name "${project.group}/${jar.baseName}"
-    files jar.archivePath
+    files jar.archivePath, 'docker-entrypoint.sh'
     buildArgs(['JAR_FILE': "${jar.archiveName}"])
 }
