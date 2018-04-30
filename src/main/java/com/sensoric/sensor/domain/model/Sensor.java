@@ -21,5 +21,5 @@ public class Sensor {
 	private Location location;
 
 	@ManyToOne(optional = false)
-	private SensorType type;
+	private SensorType sensorType;
 }
