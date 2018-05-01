@@ -1,6 +1,7 @@
 CREATE ROLE sensoric WITH LOGIN PASSWORD '*********';
 CREATE DATABASE sensoric;
-GRANT SELECT, UPDATE, DELETE, INSERT ON ALL TABLES IN SCHEMA public TO sensoric;
+
+#\c sensoric
 
 CREATE TABLE sensor_types (
     id UUID PRIMARY KEY,
@@ -21,3 +22,5 @@ CREATE TABLE sensors (
     FOREIGN KEY (location_id) REFERENCES locations (id),
     UNIQUE (name, sensor_type_id, location_id)
 );
+
+GRANT SELECT, UPDATE, DELETE, INSERT ON ALL TABLES IN SCHEMA public TO sensoric;
