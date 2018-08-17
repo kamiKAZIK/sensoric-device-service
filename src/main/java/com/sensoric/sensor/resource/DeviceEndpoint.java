@@ -1,4 +1,4 @@
-package com.sensoric.sensor.api.rest;
+package com.sensoric.sensor.resource;
 
 import com.sensoric.sensor.domain.model.Device;
 import com.sensoric.sensor.service.DeviceService;
