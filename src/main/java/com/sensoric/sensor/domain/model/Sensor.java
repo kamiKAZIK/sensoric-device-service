@@ -1,25 +1,14 @@
 package com.sensoric.sensor.domain.model;
 
-import lombok.Data;
+import org.neo4j.ogm.annotation.NodeEntity;
+import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import java.util.UUID;
 
-@Data
-@Entity
-@Table(name = "sensors")
+@NodeEntity
 public class Sensor {
 	@Id
 	private UUID id;
 
 	private String name;
-
-	@ManyToOne(optional = false)
-	private Location location;
-
-	@ManyToOne(optional = false)
-	private SensorType sensorType;
 }
