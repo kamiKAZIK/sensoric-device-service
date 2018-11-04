@@ -2,10 +2,7 @@ package com.sensoric.sensor.domain.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Data
@@ -18,5 +15,5 @@ public class Sensor {
     private String name;
 
     @ManyToOne
-    private SensorType type;
+    private SensorType sensorType;
 }

@@ -1,2 +1,3 @@
 rootProject.name = 'sensoric-sensor-service'
 
+include 'api'

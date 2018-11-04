@@ -6,13 +6,15 @@ plugins {
     id 'com.palantir.docker' version '0.20.1'
 }
 
-group 'com.sensoric'
-version '1.0-SNAPSHOT'
+allprojects {
+    group 'com.sensoric'
+    version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
+    sourceCompatibility = 1.8
 
-repositories {
-    jcenter()
+    repositories {
+        jcenter()
+    }
 }
 
 dependencyManagement {
@@ -22,6 +24,8 @@ dependencyManagement {
 }
 
 dependencies {
+    compile project('api')
+
     compile 'org.springframework.cloud:spring-cloud-config-client'
 
     compile 'org.springframework.boot:spring-boot-starter-actuator'
