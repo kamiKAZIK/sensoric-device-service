@@ -3,10 +3,9 @@ package com.sensoric.sensor.service;
 import com.sensoric.sensor.domain.model.Device;
 import com.sensoric.sensor.domain.repository.DeviceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Service
 public class DefaultDeviceService implements DeviceService {
@@ -18,10 +17,7 @@ public class DefaultDeviceService implements DeviceService {
     }
 
     @Override
-    public Set<Device> fetchDevices() {
-        Set<Device> devices = new HashSet<>();
-        repository.findAll().forEach(devices::add);
-
-        return devices;
+    public Page<Device> fetchDevices(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 }

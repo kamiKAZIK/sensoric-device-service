@@ -1,9 +1,9 @@
 package com.sensoric.sensor.service;
 
 import com.sensoric.sensor.domain.model.Device;
-
-import java.util.Set;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface DeviceService {
-    Set<Device> fetchDevices();
+    Page<Device> fetchDevices(Pageable pageable);
 }

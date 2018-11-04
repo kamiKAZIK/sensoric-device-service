@@ -1,19 +1,23 @@
 package com.sensoric.sensor.domain.model;
 
-import org.neo4j.ogm.annotation.NodeEntity;
-import org.neo4j.ogm.annotation.Relationship;
-import org.springframework.data.annotation.Id;
+import lombok.Data;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.Set;
 import java.util.UUID;
 
-@NodeEntity
+@Data
+@Entity
+@Table(name = "devices")
 public class Device {
     @Id
     private UUID id;
 
     private String name;
 
-    @Relationship(type = "BELONGS_TO", direction = Relationship.INCOMING)
-    Set<Sensor> sensors;
+    @OneToMany
+    private Set<Sensor> sensors;
 }
