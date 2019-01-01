@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.UUID;
 
 @Data
-public class RegisterDeviceResponse {
-    private UUID id;
-    private String name;
+public final class RegisterDeviceResponse {
+	private final UUID id;
+	private final String name;
 }

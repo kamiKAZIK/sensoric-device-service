@@ -1,8 +1,8 @@
-package com.sensoric.sensor.service.command;
+package com.sensoric.sensor.domain.command;
 
 import lombok.Data;
 
 @Data
 public final class RegisterDeviceCommand {
-    private String name;
+	private final String name;
 }

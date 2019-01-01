@@ -11,8 +11,8 @@ import java.util.UUID;
 @Entity
 @Table(name = "sensor_types")
 public class SensorType {
-    @Id
-    private UUID id;
+	@Id
+	private UUID id;
 
-    private String name;
+	private String name;
 }

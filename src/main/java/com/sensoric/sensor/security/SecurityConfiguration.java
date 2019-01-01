@@ -1,4 +1,4 @@
-package com.sensoric.sensor.config;
+package com.sensoric.sensor.security;
 
 import org.springframework.boot.actuate.autoconfigure.security.servlet.EndpointRequest;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -13,7 +13,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 @EnableConfigurationProperties(value = SecurityProperties.class)
 @Configuration
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	private static final String ROLE_USER = "USER";
 	private static final String ROLE_ACTUATOR = "ACTUATOR";
 
@@ -36,7 +36,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		properties.getUsers()
 				.stream()
 				.map(this::build)
-				.forEach(u -> manager.createUser(u));
+				.forEach(manager::createUser);
 
 		return manager;
 	}

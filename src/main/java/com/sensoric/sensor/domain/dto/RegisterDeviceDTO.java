@@ -1,4 +1,4 @@
-package com.sensoric.sensor.service.dto;
+package com.sensoric.sensor.domain.dto;
 
 import lombok.Data;
 
@@ -6,6 +6,6 @@ import java.util.UUID;
 
 @Data
 public final class RegisterDeviceDTO {
-    private UUID id;
-    private String name;
+	private final UUID id;
+	private final String name;
 }

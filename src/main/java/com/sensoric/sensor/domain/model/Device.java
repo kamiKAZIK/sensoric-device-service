@@ -11,16 +11,16 @@ import java.util.UUID;
 @Entity
 @Table(name = "devices")
 public class Device {
-    @Id
-    private UUID id;
+	@Id
+	private UUID id;
 
-    private String name;
+	private String name;
 
-    @JoinColumn(name = "device_id", referencedColumnName = "id", nullable = false)
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Sensor> sensors = new ArrayList<>();
+	@JoinColumn(name = "device_id", referencedColumnName = "id", nullable = false)
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Sensor> sensors = new ArrayList<>();
 
-    public void addSensor(Sensor sensor) {
-        sensors.add(sensor);
-    }
+	public void addSensor(Sensor sensor) {
+		sensors.add(sensor);
+	}
 }

@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.UUID;
 
 @Data
-public class RegisterSensorRequest {
-    private String name;
-    private UUID type;
+public final class RegisterSensorRequest {
+	private final String name;
+	private final UUID type;
 }
