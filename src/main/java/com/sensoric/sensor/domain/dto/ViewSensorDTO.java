@@ -5,7 +5,8 @@ import lombok.Data;
 import java.util.UUID;
 
 @Data
-public final class RegisterDeviceDTO {
+public class ViewSensorDTO {
 	private final UUID id;
-	private final String name;
+
+	private final String serialNumber, name;
 }

@@ -1,11 +1,11 @@
-package com.sensoric.sensor.domain.dto;
+package com.sensoric.sensor.api.response;
 
 import lombok.Data;
 
 import java.util.UUID;
 
 @Data
-public final class RegisterSensorDTO {
+public class ViewSensorResponse {
 	private final UUID id;
 	private final String serialNumber, name;
 }
