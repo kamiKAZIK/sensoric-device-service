@@ -10,9 +10,11 @@ sensoric:
   security:
     user:
       name: sensor-user
+      password: '{noop}sensor-user'
       roles: USER
     manager:
       name: sensor-manager
+      password: '{noop}sensor-manager'
       roles: ACTUATOR
 
 spring:
@@ -21,3 +23,7 @@ spring:
       hibernate:
         temp:
           use_jdbc_metadata_defaults: false
+
+spring.datasource.url: jdbc:postgresql://localhost:5432/sensoric
+spring.datasource.username: sensoric
+spring.datasource.password: 'dmgi{km(cqpdnW-t5M6_qsaywVAfM\v6'

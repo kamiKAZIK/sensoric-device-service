@@ -5,10 +5,7 @@ import com.sensoric.sensor.api.request.RegisterSensorRequest;
 import com.sensoric.sensor.api.response.ChangeSensorResponse;
 import com.sensoric.sensor.api.response.RegisterSensorResponse;
 import com.sensoric.sensor.api.response.ViewSensorResponse;
-import com.sensoric.sensor.domain.command.ChangeSensorCommand;
-import com.sensoric.sensor.domain.command.DeleteSensorCommand;
-import com.sensoric.sensor.domain.command.RegisterSensorCommand;
-import com.sensoric.sensor.domain.command.ViewSensorCommand;
+import com.sensoric.sensor.domain.command.*;
 import com.sensoric.sensor.domain.dto.ChangeSensorDTO;
 import com.sensoric.sensor.domain.dto.DeleteSensorDTO;
 import com.sensoric.sensor.domain.dto.RegisterSensorDTO;
@@ -23,6 +20,7 @@ import org.springframework.integration.handler.LoggingHandler;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.awt.print.Pageable;
 import java.text.MessageFormat;
 import java.util.UUID;
 
@@ -34,6 +32,11 @@ class SensorApiConfiguration {
 
 		SensorController(SensorGateway sensorGateway) {
 			this.sensorGateway = sensorGateway;
+		}
+
+		@GetMapping(path = "/sensors")
+		public void searchSensors(@RequestParam(required = false) String name, Pageable pageable) {
+
 		}
 
 		@PostMapping(path = "/sensor")
@@ -59,6 +62,9 @@ class SensorApiConfiguration {
 
 	@MessagingGateway
 	protected interface SensorGateway {
+		@Gateway(requestChannel = "")
+		RegisterSensorResponse searchSensors(SearchSensorsCommand command);
+
 		@Gateway(requestChannel = "registerSensorFlow.input")
 		RegisterSensorResponse registerSensor(RegisterSensorCommand command);
 
