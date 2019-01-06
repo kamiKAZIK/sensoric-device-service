@@ -23,7 +23,3 @@ spring:
       hibernate:
         temp:
           use_jdbc_metadata_defaults: false
-
-spring.datasource.url: jdbc:postgresql://localhost:5432/sensoric
-spring.datasource.username: sensoric
-spring.datasource.password: 'dmgi{km(cqpdnW-t5M6_qsaywVAfM\v6'

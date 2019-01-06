@@ -2,8 +2,11 @@ package com.sensoric.sensor.domain.repository;
 
 import com.sensoric.sensor.domain.model.Sensor;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.UUID;
 
-public interface SensorRepository extends JpaRepository<Sensor, UUID> {
+@RepositoryRestResource
+public interface SensorRepository extends JpaRepository<Sensor, UUID>, JpaSpecificationExecutor<Sensor> {
 }
