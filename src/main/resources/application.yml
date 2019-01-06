@@ -16,6 +16,9 @@ sensoric:
       roles: ACTUATOR
 
 spring:
+  data:
+    rest:
+      basePath: /api
   jpa:
     properties:
       hibernate:
