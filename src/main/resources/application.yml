@@ -10,11 +10,9 @@ sensoric:
   security:
     user:
       name: sensor-user
-      password: '{noop}sensor-user'
       roles: USER
     manager:
       name: sensor-manager
-      password: '{noop}sensor-manager'
       roles: ACTUATOR
 
 spring:
