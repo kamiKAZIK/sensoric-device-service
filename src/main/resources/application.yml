@@ -24,3 +24,13 @@ spring:
       hibernate:
         temp:
           use_jdbc_metadata_defaults: false
+---
+spring:
+  profiles: local
+
+sensoric:
+  security:
+    user:
+      password: '{noop}sensor-user'
+    manager:
+      password: '{noop}sensor-manager'
