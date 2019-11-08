@@ -1,15 +1,13 @@
 package com.sensoric.sensor.security;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-@Getter
-@Setter
+@Data
 @ConfigurationProperties(prefix = "sensoric.security")
 class SecurityProperties {
 	private UserProperties user, manager;
@@ -18,8 +16,7 @@ class SecurityProperties {
 		return Collections.unmodifiableList(Arrays.asList(user, manager));
 	}
 
-	@Getter
-	@Setter
+	@Data
 	static final class UserProperties {
 		private String name, password;
 		private String[] roles;
